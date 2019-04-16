@@ -14,8 +14,8 @@ class Bhaskara:
 
         self.__calcularDelta()
         self.__validarDelta()
-        x1 = self.calcularX1()
-        x2 = self.calcularX2()
+        x1 = self.__calcularX1()
+        x2 = self.__calcularX2()
 
         if(x1 == x2):
             return [x1]
@@ -29,14 +29,14 @@ class Bhaskara:
         if(self.delta < 0):
             raise Exception("ERRO: Valores de A, B e C resultam num Delta negativo.\n")
 
-    def calcularX1(self):
+    def __calcularX1(self):
         return (
             ((self.b * -1) + math.sqrt(self.delta))
             /
             (2 * self.a)
         )
 
-    def calcularX2(self):
+    def __calcularX2(self):
         return (
             ((self.b * -1) - math.sqrt(self.delta))
             /
