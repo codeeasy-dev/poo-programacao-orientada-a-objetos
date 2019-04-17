@@ -2,15 +2,15 @@ import math
 
 class Bhaskara:
     def __init__(self):
-        self.a = 0.0
-        self.b = 0.0
-        self.c = 0.0
-        self.delta = 0.0
+        self.__a = 0.0
+        self.__b = 0.0
+        self.__c = 0.0
+        self.__delta = 0.0
 
     def calcular(self, a, b, c):
-        self.a = a
-        self.b = b
-        self.c = c
+        self.__a = a
+        self.__b = b
+        self.__c = c
 
         self.__calcularDelta()
         self.__validarDelta()
@@ -23,22 +23,22 @@ class Bhaskara:
             return [x1, x2]
 
     def __calcularDelta(self):
-        self.delta = (self.b * self.b) - (4 * self.a * self.c)
+        self.__delta = (self.__b * self.__b) - (4 * self.__a * self.__c)
 
     def __validarDelta(self):
-        if(self.delta < 0):
+        if(self.__delta < 0):
             raise Exception("ERRO: Valores de A, B e C resultam num Delta negativo.\n")
 
     def __calcularX1(self):
         return (
-            ((self.b * -1) + math.sqrt(self.delta))
+            ((self.__b * -1) + math.sqrt(self.__delta))
             /
-            (2 * self.a)
+            (2 * self.__a)
         )
 
     def __calcularX2(self):
         return (
-            ((self.b * -1) - math.sqrt(self.delta))
+            ((self.__b * -1) - math.sqrt(self.__delta))
             /
-            (2 * self.a)
+            (2 * self.__a)
         )
