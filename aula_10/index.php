@@ -11,7 +11,7 @@ $productsDAO = new ProductsDAO();
 
 // INSERT
 $product = new ProductDTO();
-$product->setName('Monitor')->setPrice(600);
+$product->setName('Fone de Ouvido')->setPrice(20);
 $productsDAO->addProduct($product);
 
 // SELECT
